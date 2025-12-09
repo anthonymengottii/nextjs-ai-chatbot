@@ -27,8 +27,8 @@ async function ChatPage({ params }: { params: Promise<{ id: string }> }) {
 
   const session = await auth();
 
-  if (!session) {
-    redirect("/api/auth/guest");
+  if (!session || !session.user || session.user.type === "guest") {
+    redirect("/register");
   }
 
   if (chat.visibility === "private") {

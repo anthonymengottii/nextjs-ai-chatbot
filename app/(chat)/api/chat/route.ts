@@ -113,7 +113,7 @@ export async function POST(request: Request) {
 
     const session = await auth();
 
-    if (!session?.user) {
+    if (!session?.user || session.user.type === "guest") {
       return new ChatSDKError("unauthorized:chat").toResponse();
     }
 
