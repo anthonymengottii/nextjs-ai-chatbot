@@ -113,7 +113,6 @@ O aplicativo estará disponível em [http://localhost:3000](http://localhost:300
 O projeto suporta múltiplos provedores de modelos através do Vercel AI Gateway:
 
 - **Cupula IA**: Modelo multimodal avançado com capacidades de visão e texto
-- **Cupula IA Reasoning**: Modelo com raciocínio avançado em cadeia para problemas complexos
 - **OpenAI**: GPT-4, GPT-3.5
 - **Fireworks**: Modelos Claude e outros
 
