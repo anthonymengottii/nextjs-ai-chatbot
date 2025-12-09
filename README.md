@@ -1,71 +1,181 @@
-<a href="https://chat.vercel.ai/">
-  <img alt="Next.js 14 and App Router-ready AI chatbot." src="app/(chat)/opengraph-image.png">
-  <h1 align="center">Chat SDK</h1>
-</a>
+# Next.js AI Chatbot
 
 <p align="center">
-    Chat SDK is a free, open-source template built with Next.js and the AI SDK that helps you quickly build powerful chatbot applications.
+  <img alt="Next.js AI Chatbot" src="app/(chat)/opengraph-image.png">
+  <h1 align="center">Next.js AI Chatbot</h1>
 </p>
 
 <p align="center">
-  <a href="https://chat-sdk.dev"><strong>Read Docs</strong></a> ·
-  <a href="#features"><strong>Features</strong></a> ·
-  <a href="#model-providers"><strong>Model Providers</strong></a> ·
-  <a href="#deploy-your-own"><strong>Deploy Your Own</strong></a> ·
-  <a href="#running-locally"><strong>Running locally</strong></a>
+  Um chatbot moderno e completo construído com Next.js, AI SDK e TypeScript, totalmente traduzido para português.
 </p>
-<br/>
 
-## Features
+<p align="center">
+  <a href="#-funcionalidades"><strong>Funcionalidades</strong></a> ·
+  <a href="#-tecnologias"><strong>Tecnologias</strong></a> ·
+  <a href="#-instalação"><strong>Instalação</strong></a> ·
+  <a href="#-configuração"><strong>Configuração</strong></a> ·
+  <a href="#-deploy"><strong>Deploy</strong></a>
+</p>
 
-- [Next.js](https://nextjs.org) App Router
-  - Advanced routing for seamless navigation and performance
-  - React Server Components (RSCs) and Server Actions for server-side rendering and increased performance
-- [AI SDK](https://ai-sdk.dev/docs/introduction)
-  - Unified API for generating text, structured objects, and tool calls with LLMs
-  - Hooks for building dynamic chat and generative user interfaces
-  - Supports xAI (default), OpenAI, Fireworks, and other model providers
-- [shadcn/ui](https://ui.shadcn.com)
-  - Styling with [Tailwind CSS](https://tailwindcss.com)
-  - Component primitives from [Radix UI](https://radix-ui.com) for accessibility and flexibility
-- Data Persistence
-  - [Neon Serverless Postgres](https://vercel.com/marketplace/neon) for saving chat history and user data
-  - [Vercel Blob](https://vercel.com/storage/blob) for efficient file storage
-- [Auth.js](https://authjs.dev)
-  - Simple and secure authentication
+## ✨ Funcionalidades
 
-## Model Providers
+- 💬 **Chat em tempo real** com streaming de mensagens
+- 🤖 **Suporte a múltiplos modelos de IA** (xAI, OpenAI, Fireworks)
+- 📝 **Histórico de conversas** persistente
+- 🔐 **Autenticação segura** com Auth.js
+- 📄 **Criação e edição de documentos** (texto, código, planilhas, imagens)
+- 💡 **Sugestões de melhoria** para documentos de texto
+- 🌐 **Chats públicos e privados**
+- 🎨 **Interface moderna** com Tailwind CSS e shadcn/ui
+- 🌙 **Modo escuro/claro**
+- 📱 **Design responsivo**
+- 🇧🇷 **Totalmente em português**
 
-This template uses the [Vercel AI Gateway](https://vercel.com/docs/ai-gateway) to access multiple AI models through a unified interface. The default configuration includes [xAI](https://x.ai) models (`grok-2-vision-1212`, `grok-3-mini`) routed through the gateway.
+## 🛠️ Tecnologias
 
-### AI Gateway Authentication
+- **[Next.js 16](https://nextjs.org)** - Framework React com App Router
+- **[AI SDK](https://ai-sdk.dev)** - SDK unificado para integração com LLMs
+- **[TypeScript](https://www.typescriptlang.org)** - Tipagem estática
+- **[Tailwind CSS](https://tailwindcss.com)** - Estilização
+- **[shadcn/ui](https://ui.shadcn.com)** - Componentes UI acessíveis
+- **[Auth.js](https://authjs.dev)** - Autenticação
+- **[Drizzle ORM](https://orm.drizzle.team)** - ORM para PostgreSQL
+- **[Neon Postgres](https://neon.tech)** - Banco de dados serverless
+- **[Vercel Blob](https://vercel.com/storage/blob)** - Armazenamento de arquivos
+- **[Biome](https://biomejs.dev)** - Linter e formatador
 
-**For Vercel deployments**: Authentication is handled automatically via OIDC tokens.
+## 📦 Instalação
 
-**For non-Vercel deployments**: You need to provide an AI Gateway API key by setting the `AI_GATEWAY_API_KEY` environment variable in your `.env.local` file.
+### Pré-requisitos
 
-With the [AI SDK](https://ai-sdk.dev/docs/introduction), you can also switch to direct LLM providers like [OpenAI](https://openai.com), [Anthropic](https://anthropic.com), [Cohere](https://cohere.com/), and [many more](https://ai-sdk.dev/providers/ai-sdk-providers) with just a few lines of code.
+- Node.js 18+ ou superior
+- pnpm (ou npm/yarn)
+- Conta no Vercel (para deploy)
+- Banco de dados PostgreSQL (Neon recomendado)
 
-## Deploy Your Own
+### Passos
 
-You can deploy your own version of the Next.js AI Chatbot to Vercel with one click:
+1. **Clone o repositório**
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/templates/next.js/nextjs-ai-chatbot)
+```bash
+git clone https://github.com/anthonymengottii/nextjs-ai-chatbot.git
+cd nextjs-ai-chatbot
+```
 
-## Running locally
-
-You will need to use the environment variables [defined in `.env.example`](.env.example) to run Next.js AI Chatbot. It's recommended you use [Vercel Environment Variables](https://vercel.com/docs/projects/environment-variables) for this, but a `.env` file is all that is necessary.
-
-> Note: You should not commit your `.env` file or it will expose secrets that will allow others to control access to your various AI and authentication provider accounts.
-
-1. Install Vercel CLI: `npm i -g vercel`
-2. Link local instance with Vercel and GitHub accounts (creates `.vercel` directory): `vercel link`
-3. Download your environment variables: `vercel env pull`
+2. **Instale as dependências**
 
 ```bash
 pnpm install
-pnpm db:migrate # Setup database or apply latest database changes
+```
+
+3. **Configure as variáveis de ambiente**
+
+Copie o arquivo `.env.example` para `.env.local` e preencha com suas credenciais:
+
+```bash
+cp .env.example .env.local
+```
+
+Variáveis necessárias:
+
+```env
+# Banco de dados
+POSTGRES_URL=postgresql://user:password@host:port/database
+
+# Autenticação
+AUTH_SECRET=seu-secret-key-aqui
+
+# AI Gateway (opcional para Vercel)
+AI_GATEWAY_API_KEY=sua-api-key-aqui
+
+# Redis (opcional, para streams resumíveis)
+REDIS_URL=redis://localhost:6379
+```
+
+4. **Execute as migrações do banco de dados**
+
+```bash
+pnpm db:migrate
+```
+
+5. **Inicie o servidor de desenvolvimento**
+
+```bash
 pnpm dev
 ```
 
-Your app template should now be running on [localhost:3000](http://localhost:3000).
+O aplicativo estará disponível em [http://localhost:3000](http://localhost:3000)
+
+## ⚙️ Configuração
+
+### Modelos de IA
+
+O projeto suporta múltiplos provedores de modelos através do Vercel AI Gateway:
+
+- **xAI** (padrão): `grok-2-vision-1212`, `grok-3-mini`
+- **OpenAI**: GPT-4, GPT-3.5
+- **Fireworks**: Modelos Claude e outros
+
+Para configurar, edite `lib/ai/models.ts` e `lib/ai/providers.ts`.
+
+### Autenticação
+
+O sistema requer autenticação para usar o chatbot. Usuários não autenticados são redirecionados para a página de registro.
+
+### Banco de Dados
+
+O projeto usa Drizzle ORM para gerenciar o esquema do banco de dados:
+
+- **Gerar migrações**: `pnpm db:generate`
+- **Aplicar migrações**: `pnpm db:migrate`
+- **Abrir Drizzle Studio**: `pnpm db:studio`
+
+## 🚀 Deploy
+
+### Deploy na Vercel
+
+1. Conecte seu repositório GitHub à Vercel
+2. Configure as variáveis de ambiente na Vercel
+3. O deploy será feito automaticamente
+
+### Deploy Manual
+
+```bash
+pnpm build
+pnpm start
+```
+
+## 📝 Scripts Disponíveis
+
+- `pnpm dev` - Inicia o servidor de desenvolvimento
+- `pnpm build` - Cria build de produção
+- `pnpm start` - Inicia o servidor de produção
+- `pnpm lint` - Executa o linter
+- `pnpm format` - Formata o código
+- `pnpm db:migrate` - Aplica migrações do banco
+- `pnpm db:studio` - Abre o Drizzle Studio
+- `pnpm test` - Executa os testes
+
+## 🔒 Segurança
+
+- ✅ Autenticação obrigatória para uso do chatbot
+- ✅ Validação de entrada com Zod
+- ✅ Proteção contra SQL injection (Drizzle ORM)
+- ✅ Variáveis de ambiente para credenciais sensíveis
+- ✅ Rate limiting para prevenir abuso
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+## 🤝 Contribuindo
+
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou pull requests.
+
+## 📧 Contato
+
+Para dúvidas ou sugestões, abra uma issue no repositório.
+
+---
+
+Desenvolvido com ❤️ usando Next.js e AI SDK
