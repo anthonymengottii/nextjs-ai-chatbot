@@ -56,7 +56,7 @@ export function ModelSelector({
           data-testid="model-selector"
           variant="outline"
         >
-          {selectedChatModel?.name}
+          Cupula IA
           <ChevronDownIcon />
         </Button>
       </DropdownMenuTrigger>

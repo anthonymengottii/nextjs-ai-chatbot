@@ -485,7 +485,7 @@ function PureModelSelectorCompact({
         <Button className="h-8 px-2" variant="ghost">
           <CpuIcon size={16} />
           <span className="hidden font-medium text-xs sm:block">
-            {selectedModel?.name}
+            Cupula IA
           </span>
           <ChevronDownIcon size={16} />
         </Button>
