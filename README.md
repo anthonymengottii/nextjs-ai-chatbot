@@ -112,7 +112,8 @@ O aplicativo estará disponível em [http://localhost:3000](http://localhost:300
 
 O projeto suporta múltiplos provedores de modelos através do Vercel AI Gateway:
 
-- **xAI** (padrão): `grok-2-vision-1212`, `grok-3-mini`
+- **Cupula IA**: Modelo multimodal avançado com capacidades de visão e texto
+- **Cupula IA Reasoning**: Modelo com raciocínio avançado em cadeia para problemas complexos
 - **OpenAI**: GPT-4, GPT-3.5
 - **Fireworks**: Modelos Claude e outros
 
@@ -176,6 +177,3 @@ Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou pull r
 
 Para dúvidas ou sugestões, abra uma issue no repositório.
 
----
-
-Desenvolvido com ❤️ usando Next.js e AI SDK
