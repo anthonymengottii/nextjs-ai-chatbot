@@ -51,7 +51,7 @@ export const requestSuggestions = ({
       });
 
       for await (const element of elementStream) {
-        const suggestion: Omit<
+        const suggestionPartial: Omit<
           Suggestion,
           "userId" | "createdAt" | "documentCreatedAt"
         > = {
@@ -63,13 +63,21 @@ export const requestSuggestions = ({
           isResolved: false,
         };
 
+        // Create a complete Suggestion object for the stream with temporary values
+        const suggestionForStream: Suggestion = {
+          ...suggestionPartial,
+          userId: session.user?.id || "",
+          createdAt: new Date(),
+          documentCreatedAt: document.createdAt,
+        };
+
         dataStream.write({
           type: "data-suggestion",
-          data: suggestion,
+          data: suggestionForStream,
           transient: true,
         });
 
-        suggestions.push(suggestion);
+        suggestions.push(suggestionPartial);
       }
 
       if (session.user?.id) {
